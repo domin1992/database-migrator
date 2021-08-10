@@ -1,0 +1,13 @@
+{
+    "name": "domin1992/database-migrator",
+    "description": "Wordpress helper for migrating custom databases",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dominik",
+            "email": "domin1992@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
