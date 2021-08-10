@@ -1,7 +1,6 @@
 {
     "name": "domin1992/database-migrator",
     "description": "Wordpress helper for migrating custom databases",
-    "type": "library",
     "license": "MIT",
     "authors": [
         {
