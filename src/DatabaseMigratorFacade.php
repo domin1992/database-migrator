@@ -2,19 +2,19 @@
 
 namespace DatabaseMigrator;
 
-use DatabaseMigrator\Instances\DB_Migration;
+use DatabaseMigrator\Instances\DBMigration;
 
-class Database_Migrator_Facade
+class DatabaseMigratorFacade
 {
     /**
      * Initializes Database Migrator
      * 
      * simply add to your functions.php:
-     * add_action( 'cli_init', [\DatabaseMigrator\Database_Migrator_Facade::class, 'cli_init'] );
+     * add_action( 'cli_init', [\DatabaseMigrator\DatabaseMigratorFacade::class, 'cliInit'] );
      */
-    public static function cli_init()
+    public static function cliInit()
     {
-        \WP_CLI::add_command( 'db-migrate', DB_Migrate::class );
+        \WP_CLI::add_command( 'db-migrate', DBMigrate::class );
     }
 
     /**
@@ -25,12 +25,12 @@ class Database_Migrator_Facade
      * 
      * @return boolean
      */
-    public static function add_migration( $name, $query )
+    public static function addMigration( $name, $query )
     {
         add_filter( 'db_migrator_migration', function( $migrations ) use ($name, $query) {
             array_merge(
                 $migrations,
-                new DB_Migration(
+                new DBMigration(
                     $name,
                     $query
                 )

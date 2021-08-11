@@ -5,7 +5,7 @@ namespace DatabaseMigrator\Instances;
 /**
  * Class instance of migration, just holding data here
  */
-class DB_Migration
+class DBMigration
 {
     public $name = null;
     public $query = null;

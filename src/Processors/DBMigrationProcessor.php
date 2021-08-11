@@ -2,7 +2,7 @@
 
 namespace DatabaseMigrator\Processors;
 
-class DB_Migration_Processor
+class DBMigrationProcessor
 {
     const DB_MIGRATIONS_TABLE = 'db_migrations';
     public $migrations = [];
@@ -10,7 +10,7 @@ class DB_Migration_Processor
     /**
      * Creates migration table if not exists
      */
-    public function create_migrations_table()
+    public function createMigrationsTable()
     {
         global $wpdb;
     
@@ -28,7 +28,7 @@ class DB_Migration_Processor
      * 
      * If you want to add migration check Database_Migrator_Facade::add_migration()
      */
-    public function collect_migrations()
+    public function collectMigrations()
     {
         $this->migrations = apply_filters( 'db_migrator_migration', $this->migrations );
     }
